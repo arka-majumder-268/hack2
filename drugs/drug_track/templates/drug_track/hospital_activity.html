@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Activity</title>
+</head>
+<body>
+    <h1>Hospital Activity - {{ hospital.name }}</h1>
+    <ul>
+        {% for supply_order in supply_orders %}
+            <li>{{ supply_order.drug.name }} ({{ supply_order.quantity }}) - {{ supply_order.vendor.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <h2>Drugs</h2>
+    <ul>
+        {% for drug in drugs %}
+            <li>{{ drug.name }} ({{ drug.quantity }})</li>
+        {% endfor %}
+    </ul>
+    <h2>Vendors</h2>
+    <ul>
+        {% for vendor in vendors %}
+            <li>{{ vendor.name }} ({{ vendor.email }})</li>
+        {% endfor %}
+    </ul>
+    <h2>Hospitals</h2>
+    <ul>
+        {% for hospital in hospitals %}
+            <li>{{ hospital.name }} ({{ hospital.email }})</li>
+        {% endfor %}
+    </ul>
+    <h2>Supply Orders</h2>
+    <ul>
+        {% for supply_order in supply_orders %}
+            <li>{{ supply_order.drug.name }} ({{ supply_order.quantity }}) - {{ supply_order.vendor.name }} - {{ supply_order.hospital.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
